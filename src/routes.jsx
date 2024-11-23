@@ -35,8 +35,6 @@ function AppRoutes() {
         <Route path="/Login" element={<Login />} />
         <Route path="/Register" element={<Register />} />
         <Route path="/FuncionamientoUser" element={<FuncionamientoUser />} />
-        <Route path="/TomaSoli" element={<Tomasoli />} />
-
         <Route path="/SolicitudUsuario" element={<SolicitudUsuario />} />
         <Route path="/TrabajadorMod" element={<ModTrabajador />} />
 
