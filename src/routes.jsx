@@ -2,7 +2,6 @@ import React from "react";
 import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
 
 import Home from './Home';
-import Tomasoli from './pages/pagesClient/tomaSolicitud';
 import FuncionamientoUser from "./pages/pagesClient/FuncionamientoUser";
 import Login from './pages/pagesClient/Login';
 import Register from './pages/pagesClient/Register';
