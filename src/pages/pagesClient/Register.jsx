@@ -71,7 +71,8 @@ function Register() {
     };
 
     // Petición POST al backend
-    fetch('http://localhost:8000/registro/', {
+    const apiUrl = process.env.REACT_APP_API_URL;
+    fetch(`${apiUrl}/api/registro/`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

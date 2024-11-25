@@ -27,10 +27,11 @@ const PgCrud = () => {
       return;
     }
 
-    setError(''); // Limpiar error si las fechas son válidas
+    setError('');
 
     try {
-      const response = await fetch(`/consultas/?fecha_inicio=${fechaInicio}&fecha_termino=${fechaTermino}`);
+      const apiUrl = process.env.REACT_APP_API_URL;
+      const response = await fetch(`${apiUrl}/api/consultas/?fecha_inicio=${fechaInicio}&fecha_termino=${fechaTermino}`);
       const result = await response.json();
       setData(result);
     } catch (error) {

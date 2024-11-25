@@ -107,7 +107,7 @@ const Calendario = () => {
     console.log("Fecha:", seleccionarFecha ? format(seleccionarFecha, "yyyy-MM-dd") : "No seleccionada");
     console.log("Hora:", horaSeleccionada);
 
-    fetch('http://localhost:8000/CrearConsulta/', {
+    fetch(`${apiUrl}/api/CrearConsulta/`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

@@ -12,7 +12,8 @@ const GraficoLinea = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch(`/obtener-datos-graficos-linea/?year=${selectedYear}`);
+                const apiUrl = process.env.REACT_APP_API_URL;
+                const response = await fetch(`${apiUrl}/api/obtener-datos-graficos-linea/?year=${selectedYear}`);
                 const result = await response.json();
                 setData(result);
             } catch (error) {

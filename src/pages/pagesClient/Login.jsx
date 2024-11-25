@@ -30,8 +30,9 @@ function Login() {
       Rut: formData.rut,
       Contraseña: formData.password
     };
-
-    fetch('http://localhost:8000/login/', {
+    
+    const apiUrl = process.env.REACT_APP_API_URL;
+    fetch(`${apiUrl}/api/login/`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

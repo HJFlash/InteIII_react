@@ -7,7 +7,8 @@ const SoliRegistroUsuario = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch('/obtener-datos-registro_soli/');
+            const apiUrl = process.env.REACT_APP_API_URL;
+            const response = await fetch(`${apiUrl}/api/obtener-datos-registro_soli/`);
                 const result = await response.json();
                 setData(result);
             } catch (error) {
@@ -21,7 +22,8 @@ const SoliRegistroUsuario = () => {
 
     const handleChangeEstado = async (rut, nuevoEstado) => {
         try {
-            const response = await fetch(`/actualizar-estado-usuario/${rut}/`, {
+            const apiUrl = process.env.REACT_APP_API_URL;
+            const response = await fetch(`${apiUrl}/api/actualizar-estado-usuario/${rut}/`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

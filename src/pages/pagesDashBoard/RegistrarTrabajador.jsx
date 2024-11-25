@@ -87,8 +87,8 @@ const RegistrarTrabajador = () => {
     };
 
     
-
-    fetch("http://localhost:8000/registroTrabajador/", {
+    const apiUrl = process.env.REACT_APP_API_URL;
+    fetch(`${apiUrl}/api/registroTrabajador/`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -10,7 +10,8 @@ export const AsistenciaTortaConsultorioMes = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch(`http://localhost:8000/obtener-datos-grafico-asistencia-consultorio-mes/?month=${selectedMonth}&year=${currentYear}`);
+                const apiUrl = process.env.REACT_APP_API_URL;
+                const response = await fetch(`${apiUrl}/api/obtener-datos-grafico-asistencia-consultorio-mes/?month=${selectedMonth}&year=${currentYear}`);
                 const result = await response.json();
                 setData(result);
             } catch (error) {

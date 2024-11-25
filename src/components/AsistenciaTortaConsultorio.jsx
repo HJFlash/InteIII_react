@@ -7,7 +7,8 @@ export const AsistenciaTortaConsultorio = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch('http://localhost:8000/obtener-datos-grafico-asistencia-consultorio/');
+                const apiUrl = process.env.REACT_APP_API_URL;
+                const response = await fetch(`${apiUrl}/api/obtener-datos-grafico-asistencia-consultorio/`);
                 const result = await response.json();
                 setData(result);
             } catch (error) {

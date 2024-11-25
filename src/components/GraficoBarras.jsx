@@ -8,7 +8,8 @@ const GraficoBarras = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch(`http://localhost:8000/obtener-datos-graficos-barra/?year=${selectedYear}`);
+                const apiUrl = process.env.REACT_APP_API_URL;
+                const response = await fetch(`${apiUrl}/api/obtener-datos-graficos-barra/?year=${selectedYear}`);
                 const result = await response.json();
                 setData(result);
             } catch (error) {

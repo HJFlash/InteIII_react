@@ -6,7 +6,8 @@ function ProgressBar() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('/obtener-datos-barra-asistencia/');
+        const apiUrl = process.env.REACT_APP_API_URL;
+        const response = await fetch(`${apiUrl}/api/obtener-datos-barra-asistencia/`);
         const result = await response.json();
         console.log('API Response:', result);
         setData(result.values);
